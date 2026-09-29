@@ -1,0 +1,33 @@
+[project]
+name = "sawabe-k"
+version = "0.1.0"
+description = "さわべ特許事務所 調査・データ分析・集計用ツール"
+readme = "README.md"
+requires-python = ">=3.12,<3.13"
+dependencies = [
+    "openpyxl>=3.1",
+    "pandas>=2.2",
+]
+
+[dependency-groups]
+dev = [
+    "pytest>=8",
+    "ruff>=0.6",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.uv]
+required-version = ">=0.8.17"
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
